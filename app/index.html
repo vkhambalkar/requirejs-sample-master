@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.js"></script>
+    <script src="scripts/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.css">
+    <!-- High Charts -->
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+
+    <script data-main="scripts/main.js" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.js"></script>
+
+
+    <style>
+        #chart{
+            width:500px;
+            height:300px;
+        }
+    </style>
+
+    <script>
+        //high charts
+
+    </script>
+    <title>Require JS</title>
+</head>
+<body>
+<h1></h1>
+<div class="page-header">
+    <h1>Chart Model Experiments <small>with Plugin and Angular Directive</small></h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">C3 - JQuery Plugin</div>
+                <div class="panel-body">
+                    <div id="chart"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">High Chart - JQuery Plugin</div>
+                <div class="panel-body">
+                    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row" ng-controller="MainCtrl">
+        <div class="col-sm-6">
+            <h4>{{welcome}}</h4>
+            <div class="panel panel-default">
+                <div class="panel-heading">High Chart Directive</div>
+                <div class="panel-body">
+                    <high-line-chart id="hChartContainer"></high-line-chart>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">C3 Line Chart Directive</div>
+                <div class="panel-body">
+                    <c3-line-chart id="c3LineChart"></c3-line-chart>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div id="output"></div>
+
+</body>
+</html>

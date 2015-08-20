@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="scripts/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.js"></script>
+    <title>Chart Maker</title>
+</head>
+<body>
+<nav></nav>
+    <div class="container" ng-controller="MainCtrl as ctrl">
+        <div class="row">
+            <h1>Chart Maker</h1>
+        </div>
+        <div class="row">
+            <div class="glyphicon glyphicon-plus" ng-click="ctrl.addNew()" style="cursor: pointer;">New</div>
+
+        </div>
+        <div class="row">
+            <div class="panel panel-default" ng-repeat="item in ctrl.charts">
+                <div class="panel-heading">{{item.title}}</div>
+                <div class="panel-body">
+                    <div>
+                        <div ng-repeat="series in ctrl.series"> <input type="text" ng-model="series.label" ng-change="ctrl.refreshChart()"> </div>
+                    </div>
+                    <c3-line-chart chartData="{{chartModel}}"></c3-line-chart>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-if="ctrl.charts.length">
+            <button ng-click="ctrl.export()">Export</button>
+        </div>
+    </div>
+<script>
+    require.config({
+        baseUrl: "scripts",
+        shim: {
+            angular: {
+                exports: "angular"
+            }
+        },
+        paths: {
+            'angular': 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular'
+        }
+    });
+
+    require( [ "ChartBuilder" ], function(  ChartBuilder ) {
+        new ChartBuilder();
+    });
+</script>
+</body>
+</html>

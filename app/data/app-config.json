@@ -1,0 +1,14 @@
+{
+  "appName":"",
+  "charts":
+    [
+      {
+        "title":"First Chart",
+        "width":"500px",
+        "height":"400px",
+        "fields":
+        [{"label":"Open Systems","field":"applePrice","data":["100.00"],"$$hashKey":"object:7"},{"label":"Mastech","field":"microsoftPrice","data":["70"],"$$hashKey":"object:8"},{"label":"Credit Suisse","field":"googlePrice","data":[10],"$$hashKey":"object:9"}]
+
+      }
+    ]
+}

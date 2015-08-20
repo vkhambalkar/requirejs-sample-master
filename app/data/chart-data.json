@@ -1,0 +1,28 @@
+{
+  "stock":{
+    "fields":[
+      {"column":"date", "label":"Date"},
+      {"column":"apple", "label":"Apple", "type":"Number"},
+      {"column":"apple", "label":"Microsoft", "type":"Number"},
+      {"column":"google", "label":"Google", "type":"Number"}
+    ],
+    "values":[
+      {"date":"07-01-2015", "appleS":"70", "microsoft":"100", "google":1},
+      {"date":"07-02-2015", "appleS":"80", "microsoft":"90", "google":2},
+      {"date":"07-03-2015", "appleS":"90", "microsoft":"80", "google":6},
+      {"date":"07-04-2015", "appleS":"100.00", "microsoft":"70", "google":10}
+
+    ]
+  },
+  "positions":{
+    "fields":[
+      {"column":"stock", "label":"Scrips", "type":"String"},
+      {"column":"quantity", "label":"Quantity", "type":"String"}
+    ],
+    "values":[
+      {"stock":"Apple", "quantity":100},
+      {"stock":"Microsoft", "quantity":20},
+      {"stock":"Google", "quantity":80}
+    ]
+  }
+}
